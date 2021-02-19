@@ -32,7 +32,7 @@ jobs:
         with:
           context: .
           platforms: ${{ matrix.platforms }}
-          tags: ${{ github.repository }}:latest-${matrix.distribution}
+          tags: ${{ github.repository }}:${{ matrix.distribution }}
           build-args: |
-            distribution=${{ matrix.distribution }}
+            DISTRIBUTION=${{ matrix.distribution }}
           push: true
