@@ -1,0 +1,9 @@
+ARG RUNTIME_ALPINE_VERSION=3.12
+ARG RUNTIME_DEBIAN_VERSION=stretch-slim
+ARG DISTRIBUTION=alpine
+
+FROM alpine:${RUNTIME_ALPINE_VERSION} AS runtime-alpine
+FROM debian:${RUNTIME_DEBIAN_VERSION} AS runtime-debian
+FROM runtime-${DISTRIBUTION} AS runtime
+
+ENTRYPOINT ["echo", "Hello!"]
