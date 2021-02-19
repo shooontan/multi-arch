@@ -6,4 +6,4 @@ FROM alpine:${RUNTIME_ALPINE_VERSION} AS runtime-alpine
 FROM debian:${RUNTIME_DEBIAN_VERSION} AS runtime-debian
 FROM runtime-${DISTRIBUTION} AS runtime
 
-ENTRYPOINT ["echo", "Hello!"]
+ENTRYPOINT [ "echo", "Hello!" ]
